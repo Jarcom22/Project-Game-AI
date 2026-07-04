@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://main_maze_scene"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/Key.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/Goal.tscn" id="5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+cols = 6
+rows = 6
+cell_size = 56.0
+margin = 40.0
+player_scene = ExtResource("2")
+enemy_scene = ExtResource("3")
+key_scene = ExtResource("4")
+goal_scene = ExtResource("5")
+
+[node name="MazeLayer" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StatusLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 700.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 18
+text = "Cari kuncinya, lalu kabur ke kotak merah!"
+
+[node name="KeyLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 42.0
+offset_right = 400.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 15
+text = "Kunci: belum ada"
